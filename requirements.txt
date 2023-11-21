@@ -3,3 +3,9 @@ pytest
 click
 black
 pytest-cov
+
+python-dotenv
+databricks-sql-connector
+matplotlib
+
+pyspark

@@ -10,3 +10,6 @@ lint:
 
 test:
 	python -m pytest -vv --cov=first test_first.py
+	
+job:
+	python trigger.py
