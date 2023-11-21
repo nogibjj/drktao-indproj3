@@ -93,27 +93,3 @@ top_DJ = spark.sql(
 """
 )
 
-# COMMAND ----------
-
-
-from tabulate import tabulate
-
-# Convert top_artists DataFrame to Pandas DataFrame
-top_artists_pandas = top_artists.toPandas()
-
-# Convert top_DJ DataFrame to Pandas DataFrame
-top_DJ_pandas = top_DJ.toPandas()
-
-# Convert Pandas DataFrame to Markdown format
-top_artists_md = tabulate(top_artists_pandas, tablefmt="pipe", headers="keys")
-top_DJ_md = tabulate(top_DJ_pandas, tablefmt="pipe", headers="keys")
-Num_songs_year_md = tabulate(Num_songs_year, tablefmt="pipe", headers="keys")
-# Write to result.md
-with open("result.md", "w") as f:
-    f.write("# Number of songs for Each Year\n")
-    f.write(Num_songs_year_md)
-    f.write("\n\n# Top artists\n")
-    f.write(top_artists_md)  
-    f.write("\n\n# Top DJs\n")
-    f.write(top_DJ_md)
-print(f"Summary report saved to result.md")
