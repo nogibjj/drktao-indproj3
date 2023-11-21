@@ -1,23 +1,34 @@
-name: Python template with Github Actions
-on: [push]
+name: CI
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
 jobs:
   build:
     runs-on: ubuntu-latest
+ 
     steps:
-    - uses: actions/checkout@v2
-    - name: Set up Python 3.8
-      uses: actions/setup-python@v1
-      with:
-        python-version: 3.8
-    - name: Install dependencies
-      run: |
-        make install
-    - name: Lint with Pylint
-      run: |
-        make lint
-    - name: Test with Pytest
-      run: |
-        make test
-    - name: Format code with Python black
-      run: |
-        make format
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Set up Secrets
+        run: |
+          echo "DATABRICKS_HOST=${{ secrets.SERVER_HOSTNAME }}" >> $GITHUB_ENV
+          echo "DATABRICKS_HTTP_PATH=${{  secrets.HTTP_PATH }}" >> $GITHUB_ENV
+          echo "DATABRICKS_TOKEN=${{ secrets.TOKEN }}" >> $GITHUB_ENV
+          echo "JOB_ID=${{ secrets.JOB_ID }}" >> $GITHUB_ENV
+      - name: install packages
+        run: make install
+      - name: lint
+        run: make lint
+      - name: test
+        run: make test
+      - name: format
+        run: make format
+      - name: run databricks job 
+        run: make job
