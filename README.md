@@ -1,5 +1,15 @@
 # Individual Project 3
-The purpose of this project is to build upon the Databricks data pipeline that was constructed in mini-project 11. This repository contains multiple Databricks notebooks that perform ETL operations, as well as querying and visualizing the transformed data. In the process, I also conduct a data validation step to ensure that the data was successfully transformed and queried. Spark SQL was used to effectively transform the data and prepare it for analysis. Below I have displayed the main data transformation and visualization step contained within the notebook.
+The purpose of this project is to build upon the Databricks data pipeline that was constructed in mini-project 11. This repository contains multiple Databricks notebooks that perform ETL operations, as well as querying and visualizing the transformed data. In the process, I also conduct a data validation step to ensure that the data was successfully transformed and queried. Spark SQL was used to effectively transform the data and prepare it for analysis. The dataset used in this project contains various features of contemporary music songs, and is already included in the Databricks workspace as a sample dataset. Below I will overview the ETL and data analysis process.
+
+1. `extract.ipynb` loads raw data into a table to make it available for later processing steps.
+2. `transform_load.ipynb` transforms the original data into the appropriate column structure for analysis. Delta Lake is utilized for data storage.
+3. `query_viz.ipynb` performs several query transformations on the prepared data using Spark SQL. A data validation check is also done to ensure the query was successful. An appropriate visualization of the data is also presented, and has been reproduced below.
+
+![Alt text](viz.png)
+
+
+
+
 
 
 
