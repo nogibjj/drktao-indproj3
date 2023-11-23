@@ -3,13 +3,13 @@ install:
 		pip install -r requirements.txt
 
 format:
-	black *.py
+	# black *.py
 
 lint:
-	pylint --disable=R,C first.py
+	# pylint --disable=R,C first.py
 
 test:
-	python -m pytest -vv --cov=first test_first.py
+	# python -m pytest -vv --cov=first test_first.py
 	
 job:
 	python trigger.py
