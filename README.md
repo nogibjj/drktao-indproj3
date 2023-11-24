@@ -7,7 +7,7 @@ The purpose of this project is to build upon the Databricks data pipeline that w
 
 ![Alt text](viz.png)
 
-
+The repository also contains a file called `trigger.py`. As the name suggests, this file serves as an automated trigger to initiate the Databricks pipeline and perform the data analysis/visualization remotely. To execute this within Github codespaces, simply run the command `python trigger.py` in the terminal to initiate the pipeline. A successful run in Databricks will look like the following: 
 
 
 
