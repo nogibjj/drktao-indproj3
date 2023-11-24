@@ -3,11 +3,15 @@ The purpose of this project is to build upon the Databricks data pipeline that w
 
 1. `extract.ipynb` loads raw data into a table to make it available for later processing steps.
 2. `transform_load.ipynb` transforms the original data into the appropriate column structure for analysis. Delta Lake is utilized for data storage.
-3. `query_viz.ipynb` performs several query transformations on the prepared data using Spark SQL. A data validation check is also done to ensure the query was successful. An appropriate visualization of the data is also presented, and has been reproduced below.
+3. `query_viz.ipynb` performs several query transformations on the prepared data using Spark SQL. A data validation check is also done to ensure the query was successful. An appropriate visualization of the data is also presented, and has been reproduced below along with the corresponding transformed data used to generate it.
 
 ![Alt text](viz.png)
+![Alt text](data.png)
 
-The repository also contains a file called `trigger.py`. As the name suggests, this file serves as an automated trigger to initiate the Databricks pipeline and perform the data analysis/visualization remotely. To execute this within Github codespaces, simply run the command `python trigger.py` in the terminal to initiate the pipeline. A successful run in Databricks will look like the following: 
+The repository also contains a file called `trigger.py`. As the name suggests, this file serves as an automated trigger to initiate the Databricks pipeline and perform the data analysis/visualization remotely. To execute this within Github codespaces, simply run the command `python trigger.py` in the terminal to initiate the pipeline. A successful trigger and run in Databricks will look like the following: 
+
+![Alt text](trigger.png)
+![Alt text](pipeline.png)
 
 
 
