@@ -9,7 +9,7 @@ load_dotenv()
 # Replace with your environment variables or provide the actual values
 server_hostname = os.getenv("SERVER_HOSTNAME")
 job_id = os.getenv("JOB_ID")
-access_token = os.getenv("TOKEN")
+access_token = os.getenv("ACCESS_TOKEN")
 url = f'https://{server_hostname}/api/2.0/jobs/run-now'
 
 headers = {
