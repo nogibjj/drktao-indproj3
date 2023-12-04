@@ -13,7 +13,11 @@ The repository also contains a file called `trigger.py`. As the name suggests, t
 ![Alt text](trigger.png)
 ![Alt text](pipeline.png)
 
+## Video Demo
+https://www.youtube.com/watch?v=F233fhYGqAY
 
+## Databricks Cluster
+https://adb-6252625679681838.18.azuredatabricks.net/browse?o=6252625679681838
 
 
 
